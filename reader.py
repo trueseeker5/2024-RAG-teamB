@@ -1225,7 +1225,11 @@ def get_spoken(spoken, new_input, role):
     return result, hists
 
 def get_new_qa(return_result=False):
-    files= ['data/dev_final_processed.json', 'data/train_final_processed.json'] #, 'data/test_final.json']
+    files = []
+    data_files = ['dev_final_processed.json', 'train_final_processed.json', 'test_final.json']
+    for file_name in data_files:
+        if os.path.exists(os.path.join('data', file_name)):
+            files.append(os.path.join('data', file_name))
     kb = {}
     kb_ret = {}
     ret_kb = json.load(open('data/global_kb.json','r')) 
