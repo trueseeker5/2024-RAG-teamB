@@ -678,7 +678,7 @@ if __name__ == "__main__":
         cfg.exp_name = 'retrieve_api'
         cfg.exp_path = os.path.join(experiments_path, cfg.exp_name)
         if not os.path.exists(cfg.exp_path):
-            os.mkdir(cfg.exp_path)
+            os.makedirs(cfg.exp_path)
     cfg.mode = 'train_retrieve'
     cfg._init_logging_handler()
 
