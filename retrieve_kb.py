@@ -136,6 +136,7 @@ def train_api_model(cfg):
                     scheduler.step()
                     optimizer.zero_grad()
                     global_step += 1
+            torch.cuda.empty_cache()
 
         logging.info("Epoch loss: {}".format(epoch_loss / num_batches))
 
@@ -275,6 +276,7 @@ def train_api_model_retrieve(cfg):
                     logging.info(str(exception))
                     raise exception
         logging.info("Epoch loss: {}".format(epoch_loss / num_batches))
+        torch.cuda.empty_cache()
 
         # Evaluate and save checkpoint
         r_1, r_5, r_20  = evaluate_ret(passage_model, context_model, dev_dataloader, global_index, cfg)
