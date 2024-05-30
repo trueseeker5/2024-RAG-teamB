@@ -1062,7 +1062,7 @@ def parse_arg_cfg(args):
             elif dtype is list:
                 v = v.split(',')
                 if k == 'device':
-                    v = [int(no) for no in v]
+                    v = [int(no) for no in v if no]
             else:
                 v = dtype(v)
             setattr(cfg, k, v)
