@@ -93,7 +93,7 @@ def train_api_model(cfg):
     special_tokens_dict = {'additional_special_tokens': special_tokens}
     tokenizer.add_special_tokens(special_tokens_dict)
     model = Api_model(cfg, tokenizer)
-    model = nn.DataParallel(model, device_ids=[0, 1])  # 使用两个GPU
+    # model = nn.DataParallel(model, device_ids=[0, 1])  # 使用两个GPU
     model.to(cfg.device[0])#is list
     cfg.batch_size = 10
     cfg.epoch_num = 40
@@ -219,7 +219,7 @@ def train_api_model_retrieve(cfg):
 
     # passage_model.to(cfg.device[0])#is list
     # train the context_model only
-    context_model = nn.DataParallel(context_model, device_ids=[0, 1])  # 使用两个GPU
+    # context_model = nn.DataParallel(context_model, device_ids=[0, 1])  # 使用两个GPU
     context_model.to(cfg.device[0])
     cfg.batch_size = 8
     cfg.epoch_num = 40
