@@ -21,9 +21,9 @@ class _Config:
         self.t5_path = 'experiments/pretrain_t5/best_model'
         self.t5_posterior_path ='experiments/pretrain_t5/best_model' # 'uer/t5-base-chinese-cluecorpussmall'
         # 'uer/t5-v1_1-base-chinese-cluecorpussmall'
-        self.sentence_encoder_path = 'BAAI/bge-large-zh-v1.5'
-        self.api_encoder_path = 'BAAI/bge-large-zh-v1.5'
-        #self.api_encoder_path = 'BAAI/bge-large-zh-v1.5'
+        self.sentence_encoder_path = 'BAAI/bge-m3'
+        self.api_encoder_path = 'BAAI/bge-m3'
+        #self.api_encoder_path = 'BAAI/bge-m3'
         self.api_save_dir='experiments_retrieve/best_api_model2'
         self.apiret_save_dir='experiments_retrieve/best_apiret_model1'
         self.num_apis = 6
